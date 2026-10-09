@@ -1,11 +1,181 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>Bunker Edit Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d0a">
+  <title>Bunker Edit | Demo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, Tahoma, sans-serif;
+      color: #e9f5e9;
+      background:
+        radial-gradient(ellipse at center, #203629 0%, #101a13 45%, #050806 100%);
+    }
+
+    /* เส้นตารางพื้นหลัง */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(#a3d6a00c 1px, transparent 1px),
+        linear-gradient(90deg, #a3d6a00c 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      width: min(90%, 650px);
+      padding: 55px 25px;
+      text-align: center;
+      border: 1px solid #71977a55;
+      border-radius: 16px;
+      background: #080e0bdc;
+      box-shadow: 0 0 60px #000a, inset 0 0 35px #4b8c4b0c;
+      animation: appear 1s ease-out;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 7px 15px;
+      margin-bottom: 28px;
+      border: 1px solid #71977a66;
+      border-radius: 4px;
+      color: #9acb9c;
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    .title {
+      font-size: clamp(38px, 8vw, 68px);
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-shadow: 0 0 25px #65b86b55;
+    }
+
+    .title span {
+      color: #91d477;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      color: #9ba99d;
+      font-size: 14px;
+      letter-spacing: 4px;
+    }
+
+    .line {
+      width: 80px;
+      height: 3px;
+      margin: 30px auto;
+      background: #91d477;
+      box-shadow: 0 0 15px #91d47799;
+    }
+
+    .description {
+      margin-bottom: 35px;
+      color: #c0ccc1;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .play-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 240px;
+      padding: 17px 35px;
+      border: 1px solid #b8f4a5;
+      border-radius: 5px;
+      background: #83c96c;
+      color: #091109;
+      font-size: 19px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 25px #83c96c33;
+      transition: 0.25s;
+    }
+
+    .play-button:hover {
+      background: #b1f69a;
+      box-shadow: 0 0 35px #83c96c88;
+      transform: translateY(-3px);
+    }
+
+    .play-button:active {
+      transform: scale(0.97);
+    }
+
+    .footer {
+      margin-top: 35px;
+      color: #68776b;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 40px 18px;
+      }
+
+      .subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      .play-button {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Bunker Edit Demo</h1>
-  <p><a href="./bunker_edit.html">กดที่นี่เพื่อเข้าเล่นเกม</a></p>
+  <main class="container">
+    <div class="status">● SYSTEM ONLINE</div>
+
+    <h1 class="title">BUNKER <span>EDIT</span></h1>
+    <p class="subtitle">TACTICAL SURVIVAL EXPERIENCE</p>
+
+    <div class="line"></div>
+
+    <p class="description">
+      ยินดีต้อนรับสู่ Bunker Edit<br>
+      เตรียมตัวให้พร้อม แล้วเข้าสู่สนามทดลอง
+    </p>
+
+    <a class="play-button" href="./bunker_edit.html">
+      ▶ &nbsp; เข้าเล่นเกม
+    </a>
+
+    <p class="footer">DEMO VERSION · BUILD 001</p>
+  </main>
 </body>
 </html>
